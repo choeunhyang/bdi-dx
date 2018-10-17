@@ -8,7 +8,7 @@ public class Schola {
 	private String scemail;
 	private String scaddr;
 	private String scmobile;
-	private String scBirth;
+	private String scbirth;
 	private String scdesc;
 	private String sccredat;
 	
@@ -70,12 +70,12 @@ public class Schola {
 		this.scmobile = scmobile;
 	}
 
-	public String getScBirth() {
-		return scBirth;
+	public String getScbirth() {
+		return scbirth;
 	}
 
-	public void setScBirth(String scBirth) {
-		this.scBirth = scBirth;
+	public void setScbirth(String scbirth) {
+		this.scbirth = scbirth;
 	}
 
 	public String getScdesc() {
@@ -97,12 +97,12 @@ public class Schola {
 	@Override
 	public String toString() {
 		return "Schola [scnum=" + scnum + ", scname=" + scname + ", scid=" + scid + ", scpwd=" + scpwd + ", scemail="
-				+ scemail + ", scaddr=" + scaddr + ", scmobile=" + scmobile + ", scBirth=" + scBirth + ", scdesc="
+				+ scemail + ", scaddr=" + scaddr + ", scmobile=" + scmobile + ", scbirth=" + scbirth + ", scdesc="
 				+ scdesc + ", sccredat=" + sccredat + "]";
 	}
 
 	public Schola(Integer scnum, String scname, String scid, String scpwd, String scemail, String scaddr,
-			String scmobile, String scBirth, String scdesc, String sccredat) {
+			String scmobile, String scbirth, String scdesc, String sccredat) {
 		super();
 		this.scnum = scnum;
 		this.scname = scname;
@@ -111,7 +111,7 @@ public class Schola {
 		this.scemail = scemail;
 		this.scaddr = scaddr;
 		this.scmobile = scmobile;
-		this.scBirth = scBirth;
+		this.scbirth = scbirth;
 		this.scdesc = scdesc;
 		this.sccredat = sccredat;
 	};
