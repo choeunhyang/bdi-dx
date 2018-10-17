@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdi.sp.ScholaMapper">
+	<select id="ScholaList" resultType="com.bdi.sp.vo.Schola" parameterType="com.bdi.sp.vo.Schola">
+		select scnum,scname,scemail,scmobile,scbirth,scdesc from schola
+		<where>
+			<if test="scnum!=null">scnum=${scnum}</if>
+			<if test="scname!=null">scname=${scname}</if>
+			<if test="scmobile!=null">scmobile=${scmobile}</if>
+		</where>
+	</select>
+</mapper>
