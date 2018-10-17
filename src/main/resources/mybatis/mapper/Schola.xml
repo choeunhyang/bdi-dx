@@ -4,11 +4,38 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bdi.sp.ScholaMapper">
 	<select id="ScholaList" resultType="com.bdi.sp.vo.Schola" parameterType="com.bdi.sp.vo.Schola">
-		select scnum,scname,scemail,scmobile,scbirth,scdesc from schola
+		select scname,scage,scemail,scmobile,scbirth,scdesc from schola
 		<where>
-			<if test="scnum!=null">scnum=${scnum}</if>
-			<if test="scname!=null">scname=${scname}</if>
-			<if test="scmobile!=null">scmobile=${scmobile}</if>
+			<if test="scname!=null">and scname=#{scname}</if>
+			<if test="scage!=null">and scage=#{scage}</if>
+			<if test="scmobile!=null">and scmobile=#{scmobile}</if>
 		</where>
 	</select>
+	
+	<select id="selectSchola" parameterType="com.bdi.sp.vo.Schola">
+		select from schola
+		where scid=#{scid}
+	</select>
+	
+	<delete id="deleteSchola" parameterType="com.bdi.sp.vo.Schola">
+		delete from schola
+		where scid=#{scid}
+	</delete>
+	
+	<insert id="insertSchola" parameterType="com.bdi.sp.vo.Schola">
+		insert into schola(scname,scid,scpwd,scemil,scaddr,scMobile,scBirth,scdesc,sccredat)
+		values(#{scname},#{scid},#{scpwd},#{scemil},#{scaddr},#{scMobile},#{scBirth},#{scdesc},#{sccredat})
+	</insert>
+	
+	<update id="updateSchola" parameterType="com.bdi.sp.vo.Schola">
+		update schola
+		<set>
+			<if test="scid!=null">, scid=#{scid}</if>
+			<if test="scpwd!=null">, scpwd=#{scpwd}</if>
+			<if test="scname!=null">, scname=#{scname}</if>
+			<if test="scage!=null">, scage=#{scage}</if>
+			<if test="scmobile!=null">, scmobile=#{scmobile}</if>
+		</set>
+		where scid=#{scid}
+	</update>
 </mapper>

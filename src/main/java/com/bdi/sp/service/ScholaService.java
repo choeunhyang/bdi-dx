@@ -9,5 +9,5 @@ import com.bdi.sp.vo.Schola;
 @Service
 public interface ScholaService {
 	public List<Schola> scholaList (Schola sc);
-	public Schola selectschola (int scnum);
+	public Schola selectschola (String scid);
 }

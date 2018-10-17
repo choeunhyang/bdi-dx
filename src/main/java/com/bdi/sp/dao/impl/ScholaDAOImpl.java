@@ -21,8 +21,8 @@ public class ScholaDAOImpl implements ScholaDAO {
 	}
 
 	@Override
-	public Schola selectschola(int scnum) {
-		return null;
+	public Schola selectschola(String scid) {
+		return ss.selectOne("com.bdi.sp.ScholaMapper.selectSchola",scid);
 	}
 
 }

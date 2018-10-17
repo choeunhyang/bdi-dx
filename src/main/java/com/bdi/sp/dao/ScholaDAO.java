@@ -9,5 +9,5 @@ import com.bdi.sp.vo.Schola;
 @Repository
 public interface ScholaDAO {
 	public List<Schola> scholaList ();
-	public Schola selectschola (int scnum);
+	public Schola selectschola (String scid);
 }

@@ -21,8 +21,8 @@ public class ScholaServiceImpl implements ScholaService {
 	}
 
 	@Override
-	public Schola selectschola(int scnum) {
-		return sdao.selectschola(scnum);
+	public Schola selectschola(String scid) {
+		return sdao.selectschola(scid);
 	}
 
 }
