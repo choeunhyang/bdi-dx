@@ -26,8 +26,8 @@ public class ScholaServiceImpl implements ScholaService {
 	}
 
 	@Override
-	public String insertSchola(Schola sc) {
-		return sdao.insertSchola(sc);
+	public String insertSchola(String scid) {
+		return sdao.insertSchola(scid);
 	}
 
 	@Override
@@ -36,8 +36,8 @@ public class ScholaServiceImpl implements ScholaService {
 	}
 
 	@Override
-	public String updateSchola(Schola sc) {
-		return sdao.updateSchola(sc);
+	public String updateSchola(String scid) {
+		return sdao.updateSchola(scid);
 	}
 
 }
