@@ -8,18 +8,23 @@
 	<link rel="stylesheet" type="text/css" href="${resPath}/dhtmlx/skins/terrace/dhtmlx.css"/> 
 </head>
 <script>
-
 	var scGrid;
 	function doInit(){
 		scGrid = new dhtmlXGridObject('divGrid');
 		scGrid.setImagePath('${resPath}/dhtmlx/skins/terrace/imgs/dhxgrid_terrace');
-		scGrid.setHeader('번호,이름,이메일,전화번호,생일,자기소개');
-		scGrid.setColumnIds('scnum,scname,scemail,scmobile,scbirth,scdesc')
+		scGrid.setHeader('이름,나이,이메일,전화번호,생일,자기소개');
+		scGrid.setColumnIds('scname,scage,scemail,scmobile,scbirth,scdesc');
+		scGrid.setColTypes('ro,ro,ro,ro,ro,ro');
+		scGrid.setColSorting('str,int,str,str,str,str');
 		scGrid.init();
+		au.send({url:'/schola',success:function(res){
+			res = JSON.parse(res);
+			scGrid.parse(res,'js');
+		}});
 	};
 	window.addEventListener('load',doInit);
 </script>
 <body>
-	<div id="divGrid" style="width:700px; height:500px;"></div>
+	<div id="divGrid" style="width:800px; height:500px;"></div>
 </body>
 </html>
