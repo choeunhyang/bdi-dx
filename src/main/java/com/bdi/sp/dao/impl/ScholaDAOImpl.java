@@ -17,7 +17,7 @@ public class ScholaDAOImpl implements ScholaDAO {
 	
 	@Override
 	public List<Schola> scholaList() {
-		return ss.selectList("com.bdi.sp.ScholaMapping.ScholaList");
+		return ss.selectList("com.bdi.sp.ScholaMapper.ScholaList");
 	}
 
 	@Override
