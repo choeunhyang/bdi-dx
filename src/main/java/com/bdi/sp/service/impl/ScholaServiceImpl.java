@@ -21,8 +21,23 @@ public class ScholaServiceImpl implements ScholaService {
 	}
 
 	@Override
-	public Schola selectschola(String scid) {
-		return sdao.selectschola(scid);
+	public Schola selectSchola(String scid) {
+		return sdao.selectSchola(scid);
+	}
+
+	@Override
+	public String insertSchola(Schola sc) {
+		return sdao.insertSchola(sc);
+	}
+
+	@Override
+	public String deleteSchola(String scid) {
+		return sdao.deleteSchola(scid);
+	}
+
+	@Override
+	public String updateSchola(Schola sc) {
+		return sdao.updateSchola(sc);
 	}
 
 }

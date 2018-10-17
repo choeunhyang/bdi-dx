@@ -23,18 +23,18 @@
 	</delete>
 	
 	<insert id="insertSchola" parameterType="com.bdi.sp.vo.Schola">
-		insert into schola(scname,scid,scpwd,scemil,scaddr,scMobile,scBirth,scdesc,sccredat)
-		values(#{scname},#{scid},#{scpwd},#{scemil},#{scaddr},#{scMobile},#{scBirth},#{scdesc},#{sccredat})
+		insert into schola(scid,scpwd,scname,scage,scemail,scaddr,scMobile,scBirth,scdesc)
+		values(#{scid},#{scpwd},#{scname},#{scage},#{scemail},#{scaddr},#{scMobile},#{scBirth},#{scdesc})
 	</insert>
 	
 	<update id="updateSchola" parameterType="com.bdi.sp.vo.Schola">
 		update schola
 		<set>
-			<if test="scid!=null">, scid=#{scid}</if>
-			<if test="scpwd!=null">, scpwd=#{scpwd}</if>
-			<if test="scname!=null">, scname=#{scname}</if>
-			<if test="scage!=null">, scage=#{scage}</if>
-			<if test="scmobile!=null">, scmobile=#{scmobile}</if>
+			<if test="scid!=null">scid=#{scid},</if>
+			<if test="scpwd!=null">scpwd=#{scpwd},</if>
+			<if test="scname!=null">scname=#{scname},</if>
+			<if test="scage!=null">scage=#{scage},</if>
+			<if test="scmobile!=null">scmobile=#{scmobile},</if>
 		</set>
 		where scid=#{scid}
 	</update>

@@ -21,8 +21,23 @@ public class ScholaDAOImpl implements ScholaDAO {
 	}
 
 	@Override
-	public Schola selectschola(String scid) {
+	public Schola selectSchola(String scid) {
 		return ss.selectOne("com.bdi.sp.ScholaMapper.selectSchola",scid);
+	}
+
+	@Override
+	public String insertSchola(Schola sc) {
+		return ss.insert("com.bdi.sp.ScholaMapper.insertSchola",sc)+"";
+	}
+
+	@Override
+	public String deleteSchola(String scid) {
+		return ss.delete("com.bdi.sp.ScholaMapper.insertSchola",scid)+"";
+	}
+
+	@Override
+	public String updateSchola(Schola sc) {
+		return ss.update("com.bdi.sp.ScholaMapper.insertSchola",sc)+"";
 	}
 
 }
