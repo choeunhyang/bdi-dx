@@ -25,6 +25,21 @@ public class ScholaController {
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.GET)
 	public @ResponseBody Schola selectschola(@PathVariable String scid){
-		return scs.selectschola(scid);
+		return scs.selectSchola(scid);
+	}
+	
+	@RequestMapping(value="/schola/{scid}",method=RequestMethod.POST)
+	public @ResponseBody String insertschola(@PathVariable String scid){
+		return scs.insertSchola(scid);
+	}
+	
+	@RequestMapping(value="/schola/{scid}",method=RequestMethod.DELETE)
+	public @ResponseBody String deleteschola(@PathVariable String scid){
+		return scs.deleteSchola(scid);
+	}
+	
+	@RequestMapping(value="/schola/{scid}",method=RequestMethod.PUT)
+	public @ResponseBody String updateschola(@PathVariable String scid){
+		return scs.updateSchola(scid);
 	}
 }
