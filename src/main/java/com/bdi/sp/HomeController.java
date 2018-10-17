@@ -39,6 +39,7 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		model.addAttribute("jList",ss.selectList("com.bdi.sp.JapanMapper.selectJapanList"));
 		model.addAttribute("dfList",ss.selectList("com.bdi.sp.DepartMapper.selectDepartList"));
+		model.addAttribute("scList",ss.selectList("com.bdi.sp.ScholaMapper.ScholaList"));
 		
 		return "home";
 	}
