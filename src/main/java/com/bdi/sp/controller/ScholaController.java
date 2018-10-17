@@ -22,7 +22,7 @@ public class ScholaController {
 		return scs.scholaList(sc);
 	}
 	
-	@RequestMapping(value="/schola/{scnum}",method=RequestMehod.GET)
+	@RequestMapping(value="/schola/{scnum}",method=RequestMethod.GET)
 	public @ResponseBody List<Schola> scholaLista(@ModelAttribute Schola sc){
 		return scs.scholaList(sc);
 	}
