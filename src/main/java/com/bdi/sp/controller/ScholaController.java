@@ -2,6 +2,8 @@ package com.bdi.sp.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bdi.sp.service.ScholaService;
+import com.bdi.sp.vo.Japan;
 import com.bdi.sp.vo.Schola;
 
 @Controller
 public class ScholaController {
+	private static final Logger logger = LoggerFactory.getLogger(ScholaController.class);
+	
 	@Autowired
 	public ScholaService scs;
 	
@@ -29,17 +34,20 @@ public class ScholaController {
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.POST)
-	public @ResponseBody String insertschola(@PathVariable String scid){
+	public @ResponseBody String insertschola(@ModelAttribute Schola sc,@PathVariable String scid){
+		logger.debug("Schola=>{}",sc);
 		return scs.insertSchola(scid);
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.DELETE)
-	public @ResponseBody String deleteschola(@PathVariable String scid){
+	public @ResponseBody String deleteschola(@ModelAttribute Schola sc,@PathVariable String scid){
+		logger.debug("Schola=>{}",sc);
 		return scs.deleteSchola(scid);
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.PUT)
-	public @ResponseBody String updateschola(@PathVariable String scid){
+	public @ResponseBody String updateschola(@ModelAttribute Schola sc,@PathVariable String scid){
+		logger.debug("Schola=>{}",sc);
 		return scs.updateSchola(scid);
 	}
 }
