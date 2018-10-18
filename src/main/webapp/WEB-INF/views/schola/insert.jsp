@@ -10,17 +10,16 @@
 function doInit(){
 	var	formData = [{type:'fieldset',name:'sign',label:'',inputwidth:'auto',
 			list:[
-				{type:'input',name:'id',label:'ID',value:'${sc.scid}',validate:'ValidAplhaNumeric',required:true},
-				{type:'password',name:'pwd',label:'PASSWORD',value:'${sc.scpwd}' ,validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'name',label:'NAME',value:'${sc.scname}',validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'age',label:'AGE',value:'${sc.scage}',validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'email',label:'EMAIL',value:'${sc.scemail}'},
-				{type:'input',name:'addr',label:'ADDRESS',value:'${sc.scaddr}'},
-				{type:'input',name:'mobile',label:'MOBILE',value:'${sc.scmobile}',validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'birth',label:'BIRTHDAY',value:'${sc.scbirth}'},
-				{type:'input',name:'desc',label:'DESC',value:'${sc.scdesc}',rows:'8'},
-				{type:'button',name:'abtn',value:'수정하기'},
-				{type:'button',name:'dbtn',value:'삭제하기'},
+				{type:'input',name:'id',label:'ID',validate:'ValidAplhaNumeric',required:true},
+				{type:'password',name:'pwd',label:'PASSWORD' ,validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'name',label:'NAME',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'age',label:'AGE',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'email',label:'EMAIL'},
+				{type:'input',name:'addr',label:'ADDRESS'},
+				{type:'input',name:'mobile',label:'MOBILE',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'birth',label:'BIRTHDAY'},
+				{type:'input',name:'desc',label:'DESC',rows:'8'},
+				{type:'button',name:'abtn',value:'가입하기'},
 				{type:'button',name:'bbtn',value:'돌아가기'}
 			]
 		}];
@@ -39,8 +38,8 @@ function doInit(){
 				var birth = scForm.getItemValue('birth');
 				var desc = scForm.getItemValue('desc');
 				var	conf = {
-					url:'/schola/'+id,
-					method:'PUT',
+					url:'/schola',
+					method:'POST',
 					param:JSON.stringify({
 						scid:id,scpwd:pwd,scname:name,scage:age,
 						scemail:email,scaddr:addr,scmobile:mobile,
@@ -48,24 +47,15 @@ function doInit(){
 					}),
 					success:function(res){
 						if(res=="1"){
-							alert('수정에 성공하였습니다.');
+							alert('가입에 성공하였습니다.');
 							location.href='/uri/schola/list';
 						}else{
-							alert('수정에 실패하였습니다.');
+							alert('가입에 실패하였습니다.');
 						}
 					}
 				};
 				au.send(conf);
 			}
-		}else if(name=='dbtn'){
-			au.send({url:'/schola/'+id,method:'DELETE',success:function(res){
-				if(res=="1"){
-					alert('삭제에 성공하였습니다.');
-					location.href='/uri/schola/list';
-				}else{
-					alert('삭제에 실패하였습니다.');
-				}
-			}});
 		}else if(name=='bbtn'){
 			location.href='/uri/schola/list';
 		}

@@ -32,8 +32,9 @@ public class ScholaController {
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.GET)
-	public @ResponseBody Schola selectschola2(@PathVariable String scid){
-		return scs.selectSchola2(scid);
+	public String selectschola2(Model mo,@PathVariable String scid){
+		mo.addAttribute("sc",scs.selectSchola2(scid));
+		return "schola/view";
 	}
 	
 	@RequestMapping(value="/schola/{scid}/{scpwd}",method=RequestMethod.GET)
@@ -41,10 +42,10 @@ public class ScholaController {
 		return scs.selectSchola(scid, scpwd);
 	}
 	
-	@RequestMapping(value="/schola/{scid}",method=RequestMethod.POST)
-	public @ResponseBody String insertschola(@ModelAttribute Schola s,@PathVariable Schola scid){
+	@RequestMapping(value="/schola",method=RequestMethod.POST)
+	public @ResponseBody String insertschola(@ModelAttribute Schola s){
 		logger.debug("Schola=>{}",s);
-		return scs.insertSchola(scid);
+		return scs.insertSchola(s);
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.DELETE)
@@ -54,8 +55,8 @@ public class ScholaController {
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.PUT)
-	public @ResponseBody String updateschola(@RequestBody Schola s,@PathVariable Schola scid){
+	public @ResponseBody String updateschola(@RequestBody Schola s,@PathVariable String scid){
 		logger.debug("Schola=>{}",s);
-		return scs.updateSchola(scid);
+		return scs.updateSchola(s);
 	}
 }

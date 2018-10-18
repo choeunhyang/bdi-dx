@@ -36,7 +36,7 @@
 		scForm = new dhtmlXForm('divForm',form);
 		scForm.attachEvent('onButtonClick',function(name){
 			if(name=='sign'){
-				alert('sss');
+				location.href='/uri/schola/insert';
 			}else if(name=='update'){
 				if(!scWin){
 					scWin = new dhtmlXWindows();
@@ -52,7 +52,8 @@
 								var conf = {
 										url : '/schola/'+ id + '/' + pwd,
 										success:function(res){
-											location.href='/uri/schola/view';
+											alert('수정하러갑니다.');
+											location.href='/schola/'+id;
 										}
 									};
 								au.send(conf);

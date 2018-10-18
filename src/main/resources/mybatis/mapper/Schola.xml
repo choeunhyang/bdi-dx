@@ -28,8 +28,8 @@
 	</delete>
 	
 	<insert id="insertSchola" parameterType="com.bdi.sp.vo.Schola">
-		insert into schola(scid,scpwd,scname,scage,scemail,scaddr,scMobile,scBirth,scdesc)
-		values(#{scid},#{scpwd},#{scname},#{scage},#{scemail},#{scaddr},#{scMobile},#{scBirth},#{scdesc})
+		insert into schola
+		values(#{scid},#{scpwd},#{scname},#{scage},#{scemail},#{scaddr},#{scMobile},#{scBirth},#{scdesc},now())
 	</insert>
 	
 	<update id="updateSchola" parameterType="com.bdi.sp.vo.Schola">
@@ -39,11 +39,11 @@
 			<if test="scpwd!=null">scpwd=#{scpwd},</if>
 			<if test="scname!=null">scname=#{scname},</if>
 			<if test="scage!=null">scage=#{scage},</if>
-			<if test="scage!=null">scemail=#{scemail},</if>
-			<if test="scage!=null">scaddr=#{scaddr},</if>
+			<if test="scemail!=null">scemail=#{scemail},</if>
+			<if test="scaddr!=null">scaddr=#{scaddr},</if>
 			<if test="scmobile!=null">scmobile=#{scmobile},</if>
-			<if test="scage!=null">scBirth=#{scBirth},</if>
-			<if test="scage!=null">scdesc=#{scdesc},</if>
+			<if test="scbirth!=null">scbirth=#{scbirth},</if>
+			<if test="scdesc!=null">scdesc=#{scdesc},</if>
 		</set>
 		where scid=#{scid}
 	</update>
