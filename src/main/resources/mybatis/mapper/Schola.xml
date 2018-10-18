@@ -29,7 +29,7 @@
 	
 	<insert id="insertSchola" parameterType="com.bdi.sp.vo.Schola">
 		insert into schola
-		values(#{scid},#{scpwd},#{scname},#{scage},#{scemail},#{scaddr},#{scMobile},#{scBirth},#{scdesc},now())
+		values(#{scid},#{scpwd},#{scname},#{scage},#{scemail},#{scaddr},#{scmobile},#{scbirth},#{scdesc},now())
 	</insert>
 	
 	<update id="updateSchola" parameterType="com.bdi.sp.vo.Schola">

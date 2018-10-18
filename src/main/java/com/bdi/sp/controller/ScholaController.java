@@ -43,7 +43,7 @@ public class ScholaController {
 	}
 	
 	@RequestMapping(value="/schola",method=RequestMethod.POST)
-	public @ResponseBody String insertschola(@ModelAttribute Schola s){
+	public @ResponseBody String insertschola(@RequestBody Schola s){
 		logger.debug("Schola=>{}",s);
 		return scs.insertSchola(s);
 	}
