@@ -7,14 +7,26 @@
 	<title>스프링테스트</title>
 </head>
 <script>
-
-	var	loginFormData = [{type:'fieldset',name:'login',label:'자신의정보수정하러가기',inputwidth:'auto',
+function doInit(){
+	var	formData = [{type:'fieldset',name:'sign',label:'',inputwidth:'auto',
 			list:[
 				{type:'input',name:'id',label:'ID',validate:'ValidAplhaNumeric',required:true},
 				{type:'password',name:'pwd',label:'PASSWORD',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'name',label:'NAME',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'age',label:'AGE',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'email',label:'EMAIL'},
+				{type:'input',name:'addr',label:'ADDRESS'},
+				{type:'input',name:'mobile',label:'MOBILE',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'birth',label:'BIRTHDAY'},
+				{type:'textarea',name:'desc',label:'DESC'},
 				{type:'button',name:'btn',value:'LOGIN'}
 			]
 		}];
+	var	scForm;
+	scForm = new dhtmlXForm('divForm',formData);
+	
+}
+window.addEventListener('load',doInit);
 </script>
 <body>
 	<div id="divForm"></div>

@@ -53,7 +53,7 @@
 										url : '/schola/'+ id + '/' + pwd,
 										success : function(res){
 											res = JSON.parse(res);
-											
+											alert(res.scid + res.scpwd);
 										}
 									};
 								au.send(conf);

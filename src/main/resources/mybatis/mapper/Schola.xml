@@ -14,7 +14,7 @@
 	
 	<select id="selectSchola" resultType="com.bdi.sp.vo.Schola" parameterType="com.bdi.sp.vo.Schola">
 		select * from schola
-		where scid=#{scid}, scpwd=#{scpwd}
+		where scid=#{scid} and scpwd=#{scpwd}
 	</select>
 	
 	<delete id="deleteSchola" parameterType="com.bdi.sp.vo.Schola">

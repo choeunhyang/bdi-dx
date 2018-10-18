@@ -29,8 +29,9 @@ public class ScholaController {
 		return scs.scholaList(sc);
 	}
 	
-	@RequestMapping(value="/schola/{scid}",method=RequestMethod.GET)
+	@RequestMapping(value="/schola/{scid}/{scpwd}",method=RequestMethod.GET)
 	public @ResponseBody Schola selectschola(@PathVariable String scid,@PathVariable String scpwd){
+		System.out.println(scs.selectSchola(scid, scpwd));
 		return scs.selectSchola(scid,scpwd);
 	}
 	
