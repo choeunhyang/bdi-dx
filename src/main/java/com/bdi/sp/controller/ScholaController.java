@@ -35,7 +35,7 @@ public class ScholaController {
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.POST)
-	public @ResponseBody String insertschola(@ModelAttribute Schola s,@PathVariable String scid){
+	public @ResponseBody String insertschola(@ModelAttribute Schola s,@PathVariable Schola scid){
 		logger.debug("Schola=>{}",s);
 		return scs.insertSchola(scid);
 	}
@@ -47,7 +47,7 @@ public class ScholaController {
 	}
 	
 	@RequestMapping(value="/schola/{scid}",method=RequestMethod.PUT)
-	public @ResponseBody String updateschola(@RequestBody Schola s,@PathVariable String scid){
+	public @ResponseBody String updateschola(@RequestBody Schola s,@PathVariable Schola scid){
 		logger.debug("Schola=>{}",s);
 		return scs.updateSchola(scid);
 	}
