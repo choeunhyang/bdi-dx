@@ -39,7 +39,11 @@
 			<if test="scpwd!=null">scpwd=#{scpwd},</if>
 			<if test="scname!=null">scname=#{scname},</if>
 			<if test="scage!=null">scage=#{scage},</if>
+			<if test="scage!=null">scemail=#{scemail},</if>
+			<if test="scage!=null">scaddr=#{scaddr},</if>
 			<if test="scmobile!=null">scmobile=#{scmobile},</if>
+			<if test="scage!=null">scBirth=#{scBirth},</if>
+			<if test="scage!=null">scdesc=#{scdesc},</if>
 		</set>
 		where scid=#{scid}
 	</update>
