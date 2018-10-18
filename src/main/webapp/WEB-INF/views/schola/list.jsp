@@ -26,7 +26,7 @@
 				list:[
 					{type:'input',name:'id',label:'ID',validate:'ValidAplhaNumeric',required:true},
 					{type:'password',name:'pwd',label:'PASSWORD',validate:'ValidAplhaNumeric',required:true},
-					{type:'button',name:'btn',value:'로그인'}
+					{type:'button',name:'btn',value:'LOGIN'}
 				]
 		}];
 		var form = [
@@ -44,24 +44,17 @@
 					scWin.window('wlogin').centerOnScreen();
 					var loginForm = new dhtmlXForm('loginForm',loginFormData);
 					scWin.window('wlogin').attachObject('loginForm');
-					loginForm.attachEvent('onButtonClick',function(){
-						alert('s');
+					loginForm.attachEvent('onButtonClick',function(name){
 						if(name=='btn'){
-							alert('2');
 							if(loginForm.validate()){
 								var id = loginForm.getItemValue('id');
 								var pwd = loginForm.getItemValue('pwd');
 								var conf = {
 										url : '/schola/'+id,
-										method : 'GET',
-										success : function(res){
-											res = JSON.parse(res);
-											alert(res.scid + res.scpwd);
-										}
+										
 									};
 								au.send(conf);
 							}
-							
 						}
 					});
 				}

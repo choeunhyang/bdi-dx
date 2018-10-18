@@ -12,8 +12,8 @@
 		</where>
 	</select>
 	
-	<select id="selectSchola" parameterType="com.bdi.sp.vo.Schola">
-		select from schola
+	<select id="selectSchola" resultType="com.bdi.sp.vo.Schola" parameterType="com.bdi.sp.vo.Schola">
+		select * from schola
 		where scid=#{scid}
 	</select>
 	
