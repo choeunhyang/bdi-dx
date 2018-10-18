@@ -26,8 +26,8 @@ public class ScholaDAOImpl implements ScholaDAO {
 	}
 
 	@Override
-	public String insertSchola(String scid) {
-		return ss.insert("com.bdi.sp.ScholaMapper.insertSchola",scid)+"";
+	public String insertSchola(Schola sch) {
+		return ss.insert("com.bdi.sp.ScholaMapper.insertSchola",sch)+"";
 	}
 
 	@Override
@@ -36,8 +36,8 @@ public class ScholaDAOImpl implements ScholaDAO {
 	}
 
 	@Override
-	public String updateSchola(String scid) {
-		return ss.update("com.bdi.sp.ScholaMapper.insertSchola",scid)+"";
+	public String updateSchola(Schola sch) {
+		return ss.update("com.bdi.sp.ScholaMapper.insertSchola",sch)+"";
 	}
 
 }

@@ -10,7 +10,7 @@ import com.bdi.sp.vo.Schola;
 public interface ScholaDAO {
 	public List<Schola> scholaList ();
 	public Schola selectSchola (String scid);
-	public String insertSchola (String scid);
+	public String insertSchola (Schola sch);
 	public String deleteSchola (String scid);
-	public String updateSchola (String sc);
+	public String updateSchola (Schola sch);
 }
