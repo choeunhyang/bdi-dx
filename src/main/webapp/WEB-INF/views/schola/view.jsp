@@ -12,8 +12,8 @@ function doInit(){
 			list:[
 				{type:'input',name:'id',label:'ID',value:'${sc.scid}',validate:'ValidAplhaNumeric',required:true},
 				{type:'password',name:'pwd',label:'PASSWORD',value:'${sc.scpwd}' ,validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'name',label:'NAME',value:'${sc.scname}',validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'age',label:'AGE',value:'${sc.scage}',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'name',label:'NAME',value:'${sc.scname}',required:true},
+				{type:'input',name:'age',label:'AGE',value:'${sc.scage}',validate:'ValidInteger',required:true},
 				{type:'input',name:'email',label:'EMAIL',value:'${sc.scemail}'},
 				{type:'input',name:'addr',label:'ADDRESS',value:'${sc.scaddr}'},
 				{type:'input',name:'mobile',label:'MOBILE',value:'${sc.scmobile}',validate:'ValidAplhaNumeric',required:true},

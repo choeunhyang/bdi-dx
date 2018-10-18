@@ -12,8 +12,8 @@ function doInit(){
 			list:[
 				{type:'input',name:'id',label:'ID',validate:'ValidAplhaNumeric',required:true},
 				{type:'password',name:'pwd',label:'PASSWORD' ,validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'name',label:'NAME',validate:'ValidAplhaNumeric',required:true},
-				{type:'input',name:'age',label:'AGE',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'name',label:'NAME',required:true},
+				{type:'input',name:'age',label:'AGE',validate:'ValidInteger',required:true},
 				{type:'input',name:'email',label:'EMAIL'},
 				{type:'input',name:'addr',label:'ADDRESS'},
 				{type:'input',name:'mobile',label:'MOBILE',validate:'ValidAplhaNumeric',required:true},
