@@ -21,10 +21,59 @@
 			res = JSON.parse(res);
 			scGrid.parse(res,'js');
 		}});
+		var scForm,scWin,loginFormData;
+		loginFormData = [{type:'fieldset',name:'login',label:'자신의정보수정하러가기',inputwidth:'auto',
+				list:[
+					{type:'input',name:'id',label:'ID',validate:'ValidAplhaNumeric',required:true},
+					{type:'password',name:'pwd',label:'PASSWORD',validate:'ValidAplhaNumeric',required:true},
+					{type:'button',name:'btn',value:'로그인'}
+				]
+		}];
+		var form = [
+			{type:'button',value:'가입',name:'sign'},
+			{type:'button',value:'수정',name:'update'}
+		];
+		scForm = new dhtmlXForm('divForm',form);
+		scForm.attachEvent('onButtonClick',function(name){
+			if(name=='sign'){
+				alert('sss');
+			}else if(name=='update'){
+				if(!scWin){
+					scWin = new dhtmlXWindows();
+					scWin.createWindow('wlogin',0,0,300,300);
+					scWin.window('wlogin').centerOnScreen();
+					var loginForm = new dhtmlXForm('loginForm',loginFormData);
+					scWin.window('wlogin').attachObject('loginForm');
+					loginForm.attachEvent('onButtonClick',function(){
+						alert('s');
+						if(name=='btn'){
+							alert('2');
+							if(loginForm.validate()){
+								var id = loginForm.getItemValue('id');
+								var pwd = loginForm.getItemValue('pwd');
+								var conf = {
+										url : '/schola/'+id,
+										method : 'GET',
+										success : function(res){
+											res = JSON.parse(res);
+											alert(res.scid + res.scpwd);
+										}
+									};
+								au.send(conf);
+							}
+							
+						}
+					});
+				}
+			}
+		});
 	};
 	window.addEventListener('load',doInit);
 </script>
 <body>
+	사람들목록
 	<div id="divGrid" style="width:800px; height:500px;"></div>
+	<div id="divForm"></div>
+	<div id="loginForm"></div>
 </body>
 </html>
