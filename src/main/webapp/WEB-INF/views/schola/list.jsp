@@ -51,9 +51,8 @@
 								var pwd = loginForm.getItemValue('pwd');
 								var conf = {
 										url : '/schola/'+ id + '/' + pwd,
-										success : function(res){
-											res = JSON.parse(res);
-											alert(res.scid + res.scpwd);
+										success:function(res){
+											location.href='/uri/schola/view';
 										}
 									};
 								au.send(conf);
