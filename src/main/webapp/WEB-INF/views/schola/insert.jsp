@@ -49,6 +49,8 @@ function doInit(){
 						if(res=="1"){
 							alert('가입에 성공하였습니다.');
 							location.href='/uri/schola/list';
+						}else if(res=="2"){
+							alert('아이디가 중복되었습니다.');
 						}else{
 							alert('가입에 실패하였습니다.');
 						}
