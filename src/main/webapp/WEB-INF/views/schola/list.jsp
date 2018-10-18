@@ -50,8 +50,11 @@
 								var id = loginForm.getItemValue('id');
 								var pwd = loginForm.getItemValue('pwd');
 								var conf = {
-										url : '/schola/'+id,
-										
+										url : '/schola/'+ id + '/' + pwd,
+										success : function(res){
+											res = JSON.parse(res);
+											
+										}
 									};
 								au.send(conf);
 							}

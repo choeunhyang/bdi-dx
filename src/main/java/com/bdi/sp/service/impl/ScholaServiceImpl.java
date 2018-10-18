@@ -22,7 +22,7 @@ public class ScholaServiceImpl implements ScholaService {
 
 	@Override
 	public Schola selectSchola(String scid, String scpwd) {
-		return sdao.selectSchola(scid);
+		return sdao.selectSchola(scid,scpwd);
 	}
 
 	@Override
