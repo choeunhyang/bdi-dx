@@ -13,8 +13,13 @@
 	</select>
 	
 	<select id="selectSchola" resultType="com.bdi.sp.vo.Schola" parameterType="com.bdi.sp.vo.Schola">
-		select * from schola
+		select scid,scpwd from schola
 		where scid=#{scid} and scpwd=#{scpwd}
+	</select>
+	
+	<select id="selectSchola2" resultType="com.bdi.sp.vo.Schola" parameterType="com.bdi.sp.vo.Schola">
+		select * from schola
+		where scid=#{scid}
 	</select>
 	
 	<delete id="deleteSchola" parameterType="com.bdi.sp.vo.Schola">

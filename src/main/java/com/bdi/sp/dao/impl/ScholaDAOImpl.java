@@ -43,4 +43,9 @@ public class ScholaDAOImpl implements ScholaDAO {
 		return ss.update("com.bdi.sp.ScholaMapper.updateSchola",sch)+"";
 	}
 
+	@Override
+	public Schola selectSchola2(String scid) {
+		return ss.selectOne("com.bdi.sp.ScholaMapper.selectSchola2",scid);
+	}
+
 }

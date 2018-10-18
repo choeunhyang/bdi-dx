@@ -40,4 +40,9 @@ public class ScholaServiceImpl implements ScholaService {
 		return sdao.updateSchola(sch);
 	}
 
+	@Override
+	public Schola selectSchola2(String scid) {
+		return sdao.selectSchola2(scid);
+	}
+
 }
