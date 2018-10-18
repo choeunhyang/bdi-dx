@@ -32,12 +32,12 @@ public class ScholaDAOImpl implements ScholaDAO {
 
 	@Override
 	public String deleteSchola(String scid) {
-		return ss.delete("com.bdi.sp.ScholaMapper.insertSchola",scid)+"";
+		return ss.delete("com.bdi.sp.ScholaMapper.deleteSchola",scid)+"";
 	}
 
 	@Override
 	public String updateSchola(Schola sch) {
-		return ss.update("com.bdi.sp.ScholaMapper.insertSchola",sch)+"";
+		return ss.update("com.bdi.sp.ScholaMapper.updateSchola",sch)+"";
 	}
 
 }
