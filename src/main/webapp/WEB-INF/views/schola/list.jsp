@@ -52,8 +52,13 @@
 								var conf = {
 										url : '/schola/'+ id + '/' + pwd,
 										success:function(res){
-											alert('수정하러갑니다.');
-											location.href='/schola/'+id;
+											if(res==""){
+												alert('다시치세요');
+											}else{
+												res = JSON.parse(res);
+												alert('수정하러갑니다.');
+												location.href='/schola/'+id;
+											}
 										}
 									};
 								au.send(conf);
