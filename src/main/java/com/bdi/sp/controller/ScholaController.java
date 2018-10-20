@@ -37,7 +37,7 @@ public class ScholaController {
 		return "schola/view";
 	}
 	
-	@RequestMapping(value="/schola/{scid}/{scpwd}",method=RequestMethod.GET)
+	@RequestMapping(value="/schola/{scid}/{scpwd}",method=RequestMethod.POST)
 	public @ResponseBody Schola selectschola(@PathVariable String scid,@PathVariable String scpwd){
 		return scs.selectSchola(scid, scpwd);
 	}

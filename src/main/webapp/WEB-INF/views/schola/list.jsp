@@ -51,13 +51,13 @@
 								var pwd = loginForm.getItemValue('pwd');
 								var conf = {
 										url : '/schola/'+ id + '/' + pwd,
+										method : 'POST',
 										success:function(res){
 											if(res==""){
 												alert('다시치세요');
 											}else{
-												res = JSON.parse(res);
 												alert('수정하러갑니다.');
-												location.href='/schola/'+id;
+												location.replace('/schola/' + id);
 											}
 										}
 									};
