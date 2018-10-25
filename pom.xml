@@ -173,7 +173,7 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.7.9</version>
 		</dependency>
-		
+
 		<!-- Aspect -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -190,17 +190,21 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.9</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>1.8.9</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.aspectj</groupId> <artifactId>aspectjrt</artifactId> 
+			<version>1.8.9</version> </dependency> -->
 
 		<!-- CGLib -->
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
 			<version>3.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>

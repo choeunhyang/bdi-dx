@@ -62,7 +62,7 @@ function doInit(){
 			location.href='/uri/schola/list';
 		}
 	});
-	
+	au.send;
 }
 window.addEventListener('load',doInit);
 </script>
