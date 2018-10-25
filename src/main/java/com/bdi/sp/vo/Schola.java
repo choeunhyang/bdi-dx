@@ -13,7 +13,7 @@ public class Schola {
 	private String sccredat;
 	
 	public Schola(){}
-
+ 
 	public String getScname() {
 		return scname;
 	}
